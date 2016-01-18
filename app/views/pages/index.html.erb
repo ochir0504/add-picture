@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<h2>Listing Pages</h2>
+ <tbody>
+    <% @pages.each do |page| %>
+    <tr>
+        <h3><td><%= page.name %></td></h3>
+        <h4><td><%= page.content %></td></h4>
+        <div class="btn btn-default btn-lg">
+          <td><%= link_to 'Show', page %></td>
+        </div>
+        <div class="btn btn-default btn-lg">
+          <td><%= link_to 'Edit', edit_page_path(page) %></td>
+      </div>
+      <div class="btn btn-default btn-lg">
+          <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </div>  
+    </tr>
+      <br>
+      <br>
+      <% end %>
+  </tbody>
+
+<br>
+
+<%= link_to 'New Page', new_page_path %>
